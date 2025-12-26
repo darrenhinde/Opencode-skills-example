@@ -1,10 +1,10 @@
 # 🎯 OpenCode Skills Showcase
 
-A complete demonstration of **OpenCode Skills** with three progressive tiers, comprehensive documentation, and a demo agent.
+A complete demonstration of **OpenCode Skills** with four progressive tiers, from simple instructions to interactive movie character personalities!
 
 ## 📚 What's Included
 
-### 1. Three Demonstration Skills
+### 1. Four Demonstration Skills
 
 **Tier 1: Simple (POC)**
 - Location: `.opencode/skill/hello-skill/`
@@ -21,73 +21,63 @@ A complete demonstration of **OpenCode Skills** with three progressive tiers, co
 **Tier 3: Advanced**
 - Location: `.opencode/skill/workflow-skill/`
 - Files: `SKILL.md`, `script1.sh`, `script2.sh`, `script3.sh`, `script4.sh`
-- Custom Tool: `.opencode/tool/print-tool.ts`
 - Demonstrates: Complete workflow orchestration
-- Concept: Custom tools extend functionality
+- Concept: Multiple scripts working together
 
-### 2. Demo Agent
+**Tier 4: Movie Personality Skill (Interactive!)**
+- Location: `.opencode/skill/smart-router-skill/`
+- Files: `SKILL.md`, `config/personality-config.json`, 3 character scripts
+- Custom Tool: `movie-personality.ts`
+- Demonstrates: Interactive character selection, configurable missions, dynamic routing
+- Concept: Config-driven behavior with rich visual output
 
-**Location**: `.opencode/agent/skills-demo-agent.md`
+### 2. Documentation
 
-A simple agent that:
-- Loads and executes each skill
-- Shows output and explanations
-- Demonstrates the progression from simple to complex
-- Answers questions about skills
-
-### 3. Documentation
-
+- **MOVIE_PERSONALITY_SUMMARY.md** - Overview of the movie personality skill
 - **SHOWCASE_SUMMARY.txt** - Quick reference guide
-- **SKILLS_SHOWCASE.md** - Comprehensive detailed guide
-- **DEMO_AGENT.md** - How to use the demo agent
 - **.opencode/README.md** - Skills structure overview
 - **README.md** - This file
 
 ## 🚀 Quick Start
 
-### Run the Full Demo
+### Try Tier 4: Movie Personality Skill
 
-Ask the demo agent to run the full demonstration:
+The most fun way to see skills in action!
 
 ```
-"Run the full skills demo"
+"Use the movie personality skill"
 ```
 
 The agent will:
-1. Execute Tier 1 (hello-skill)
-2. Execute Tier 2 (steps-skill)
-3. Execute Tier 3 (workflow-skill)
-4. Explain what you learned
+1. Ask which character you want (Yoda, Tony Stark, or Sherlock Holmes)
+2. Run the themed workflow for that character
+3. Show rich visual output with movie quotes
+4. Respond in character!
+
+**Want different behavior?** Edit `.opencode/skill/smart-router-skill/config/personality-config.json` and change the mission number from 1 to 2!
 
 ### Run Individual Tiers
 
 ```
-"Run Tier 1"
-"Run Tier 2"
-"Run Tier 3"
+"Run Tier 1" - Simple hello skill
+"Run Tier 2" - Steps with helper script
+"Run Tier 3" - Multi-script workflow
+"Run Tier 4" - Movie personality (interactive!)
 ```
 
-### Ask Questions
+## 🎬 Movie Personality Characters
 
-```
-"Explain the hello-skill"
-"How does the workflow-skill work?"
-"What's the difference between the tiers?"
-```
+### Yoda (Star Wars)
+- **Mission 1:** Defend the Republic - Train Jedi, fortify defenses
+- **Mission 2:** Infiltrate the Sith - Undercover dark side operation
 
-## 📖 Documentation Guide
+### Tony Stark (Iron Man)
+- **Mission 1:** Save the World - Build suit, assemble Avengers
+- **Mission 2:** Ultron Protocol - Autonomous defense system
 
-### For Quick Overview
-Start with **SHOWCASE_SUMMARY.txt** - 5 minute read
-
-### For Detailed Understanding
-Read **SKILLS_SHOWCASE.md** - 15 minute read with examples
-
-### For Using the Demo Agent
-Read **DEMO_AGENT.md** - Learn how to interact with the agent
-
-### For Implementation Details
-Check individual **SKILL.md** files in each skill directory
+### Sherlock Holmes
+- **Mission 1:** Solve the Murder - Deductive reasoning
+- **Mission 2:** Prevent the Crime - Predictive analysis
 
 ## 🔑 Key Concepts
 
@@ -124,32 +114,37 @@ Provide specialized functionality
 Agent calls them directly
 ```
 
-### 4. Full Visibility
+### 4. Config-Driven Behavior (Tier 4)
+```
+Simple JSON config controls workflow
+↓
+Change one number (mission: 1 → 2)
+↓
+Completely different behavior
+↓
+Same character, different story!
+```
+
+### 5. Full Visibility
 ```
 Console output shows exactly what's happening
-Random words prove actual execution
+Rich visual feedback with emojis and quotes
 Not hallucination or guessing
 Agent can see results and make decisions
 ```
 
-### 5. Just-in-Time Loading
-```
-Agent doesn't load all skills at once
-Skills load on-demand when needed
-Keeps context lightweight and focused
-Reduces hallucination and confusion
-```
-
 ## 📊 Tier Comparison
 
-| Feature | Tier 1 | Tier 2 | Tier 3 |
-|---------|--------|--------|--------|
-| **Complexity** | Minimal | Medium | Advanced |
-| **Files** | 1 | 2 | 5 + tool |
-| **Helper Scripts** | 0 | 1 | 4 |
-| **Custom Tools** | No | No | Yes |
-| **Use Case** | POC | Workflows | Complex Systems |
-| **Learning Curve** | Instant | Easy | Moderate |
+| Feature | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
+|---------|--------|--------|--------|--------|
+| **Complexity** | Minimal | Medium | Advanced | Interactive |
+| **Files** | 1 | 2 | 5 | 5 |
+| **Helper Scripts** | 0 | 1 | 4 | 3 |
+| **Custom Tools** | No | No | No | Yes (1) |
+| **Config-Driven** | No | No | No | Yes |
+| **Interactive** | No | No | No | Yes |
+| **Use Case** | POC | Workflows | Complex Systems | Fun Demo |
+| **Learning Curve** | Instant | Easy | Moderate | Fun! |
 
 ## 📁 Directory Structure
 
@@ -160,41 +155,51 @@ Reduces hallucination and confusion
 │   │   ├── codebase-agent.md          # Development agent
 │   │   └── skills-demo-agent.md       # Demo agent
 │   ├── skill/
-│   │   ├── hello-skill/
+│   │   ├── hello-skill/               # Tier 1
 │   │   │   └── SKILL.md
-│   │   ├── steps-skill/
+│   │   ├── steps-skill/               # Tier 2
 │   │   │   ├── SKILL.md
 │   │   │   └── steps.sh
-│   │   └── workflow-skill/
+│   │   ├── workflow-skill/            # Tier 3
+│   │   │   ├── SKILL.md
+│   │   │   ├── script1.sh
+│   │   │   ├── script2.sh
+│   │   │   ├── script3.sh
+│   │   │   └── script4.sh
+│   │   └── smart-router-skill/        # Tier 4 (Movie Personality!)
 │   │       ├── SKILL.md
-│   │       ├── script1.sh
-│   │       ├── script2.sh
-│   │       ├── script3.sh
-│   │       └── script4.sh
+│   │       ├── config/
+│   │       │   └── personality-config.json  ← Edit this!
+│   │       └── scripts/
+│   │           ├── yoda-workflow.sh
+│   │           ├── stark-workflow.sh
+│   │           └── sherlock-workflow.sh
 │   ├── tool/
-│   │   └── print-tool.ts
+│   │   └── movie-personality.ts       # Tier 4 tool
 │   └── README.md
 ├── SHOWCASE_SUMMARY.txt               # Quick reference
-├── SKILLS_SHOWCASE.md                 # Detailed guide
-├── DEMO_AGENT.md                      # Agent usage guide
+├── MOVIE_PERSONALITY_SUMMARY.md       # Tier 4 overview
 └── README.md                          # This file
 ```
 
 ## 💡 Learning Path
 
-### Step 1: Understand the Concept
+### Step 1: Try the Movie Personality Skill
+Ask: `"Use the movie personality skill"` - Most fun way to see skills in action!
+
+### Step 2: Understand the Basics
 Read **SHOWCASE_SUMMARY.txt** to understand what skills are
 
-### Step 2: See It In Action
-Ask the demo agent to run the full demo
+### Step 3: Explore Each Tier
+Run Tier 1, 2, 3, and 4 to see the progression
 
-### Step 3: Learn the Details
-Read **SKILLS_SHOWCASE.md** for comprehensive explanations
+### Step 4: Customize
+Edit `personality-config.json` to change missions (1 → 2) and see different behavior!
 
-### Step 4: Explore the Code
+### Step 5: Explore the Code
 Look at individual SKILL.md files and helper scripts
 
-### Step 5: Customize
+### Step 6: Create Your Own
 Use this as a template for your own skills
 
 ## 🎯 What You'll Learn
@@ -208,6 +213,33 @@ After exploring this showcase, you'll understand:
 ✅ The progression from simple to complex
 ✅ Why skills are better than hallucination
 ✅ How to create your own skills
+✅ **NEW:** How config changes drive different behaviors
+✅ **NEW:** How to make skills interactive and fun
+✅ **NEW:** How to use dynamic routing based on parameters
+
+## 🎬 Customizing Movie Personalities
+
+Want to see different behavior? It's easy!
+
+1. Open `.opencode/skill/smart-router-skill/config/personality-config.json`
+2. Find the character you want to change
+3. Change `"mission": 1` to `"mission": 2`
+4. Run the skill again - completely different workflow!
+
+**Example:**
+```json
+{
+  "yoda": {
+    "mission": 2,  ← Changed from 1 to 2!
+    "missions": {
+      "1": { "name": "Defend the Republic", ... },
+      "2": { "name": "Infiltrate the Sith", ... }
+    }
+  }
+}
+```
+
+Now Yoda will run an undercover Sith infiltration mission instead of defending the Republic!
 
 ## 🔗 Related Resources
 
@@ -217,25 +249,26 @@ After exploring this showcase, you'll understand:
 
 ## 🚀 Next Steps
 
-1. **Run the demo** - Ask the agent to run the full skills demo
-2. **Read the docs** - Start with SHOWCASE_SUMMARY.txt
-3. **Explore the code** - Look at the SKILL.md files
-4. **Ask questions** - The demo agent can explain anything
+1. **Try the movie personality skill** - Ask the agent to use it!
+2. **Choose your character** - Yoda, Stark, or Sherlock
+3. **Watch the magic** - See themed workflows in action
+4. **Customize missions** - Edit the config file
 5. **Create your own** - Use this as a template
 
 ## ✨ Key Takeaways
 
 - **Skills are modular** - Each skill is self-contained and reusable
-- **Scripts are powerful** - Simple bash/python scripts can do complex work
+- **Scripts are powerful** - Simple bash scripts can do complex work
 - **Tools extend capabilities** - Custom TypeScript tools add specialized functionality
 - **Full visibility** - Console output shows exactly what's happening
-- **No hallucination** - Random output proves actual execution
-- **Just-in-time loading** - Agent stays focused with on-demand skill loading
+- **Config-driven behavior** - Simple JSON changes create different outcomes
+- **Interactive is fun** - Agent asks questions, user chooses, magic happens!
+- **Easy to customize** - Change one number, get different behavior
 
 ---
 
 **Ready to see OpenCode Skills in action?**
 
-Ask the demo agent: `"Run the full skills demo"`
+Ask the agent: `"Use the movie personality skill"`
 
-🎉
+🎬 Choose your character and watch the show! 🚀
