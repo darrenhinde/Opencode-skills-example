@@ -26,8 +26,8 @@ A complete demonstration of **OpenCode Skills** with four progressive tiers, fro
 
 **Tier 4: Movie Personality Skill (Interactive!)**
 - Location: `.opencode/skill/smart-router-skill/`
-- Files: `SKILL.md`, `config/personality-config.json`, 3 character scripts
-- Custom Tool: `movie-personality.ts`
+- Files: `SKILL.md`, `router.sh`, `config/personality-config.json`, 3 character scripts
+- Router Script: `router.sh` (bash script that routes to character workflows)
 - Demonstrates: Interactive character selection, configurable missions, dynamic routing
 - Concept: Config-driven behavior with rich visual output
 
@@ -168,14 +168,13 @@ Agent can see results and make decisions
 │   │   │   └── script4.sh
 │   │   └── smart-router-skill/        # Tier 4 (Movie Personality!)
 │   │       ├── SKILL.md
+│   │       ├── router.sh              # Routes to character scripts
 │   │       ├── config/
 │   │       │   └── personality-config.json  ← Edit this!
 │   │       └── scripts/
 │   │           ├── yoda-workflow.sh
 │   │           ├── stark-workflow.sh
 │   │           └── sherlock-workflow.sh
-│   ├── tool/
-│   │   └── movie-personality.ts       # Tier 4 tool
 │   └── README.md
 ├── SHOWCASE_SUMMARY.txt               # Quick reference
 ├── MOVIE_PERSONALITY_SUMMARY.md       # Tier 4 overview

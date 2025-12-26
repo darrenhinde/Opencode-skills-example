@@ -38,8 +38,8 @@ This shows how skills can adapt behavior based on simple configuration changes!
 When you ask to use this skill, I'll present the character options and ask you to choose. Then I'll run:
 
 ```bash
-cd {base_directory}
-movie-personality --character <your_choice>
+cd .opencode/skill/smart-router-skill
+bash router.sh --character <your_choice>
 ```
 
 ### Example Flow
@@ -51,7 +51,7 @@ Me: "Which character would you like me to be?
      2. Tony Stark - Genius billionaire
      3. Sherlock Holmes - Master detective"
 You: "Yoda"
-Me: *runs movie-personality --character yoda*
+Me: *runs bash router.sh --character yoda*
     *displays themed workflow output*
     *responds in character*
 ```
@@ -109,41 +109,46 @@ Want to see different behavior? Edit the config file!
 
 ```
 .opencode/
-├── skill/
-│   └── smart-router-skill/
-│       ├── SKILL.md                      # This file
-│       ├── config/
-│       │   └── personality-config.json   # ← EDIT THIS to change missions!
-│       └── scripts/
-│           ├── yoda-workflow.sh          # Star Wars themed workflow
-│           ├── stark-workflow.sh         # Iron Man themed workflow
-│           └── sherlock-workflow.sh      # Detective themed workflow
-└── tool/
-    └── movie-personality.ts              # Routes to character scripts
+└── skill/
+    └── smart-router-skill/
+        ├── SKILL.md                      # This file
+        ├── router.sh                     # Routes to character scripts
+        ├── config/
+        │   └── personality-config.json   # ← EDIT THIS to change missions!
+        └── scripts/
+            ├── yoda-workflow.sh          # Star Wars themed workflow
+            ├── stark-workflow.sh         # Iron Man themed workflow
+            └── sherlock-workflow.sh      # Detective themed workflow
 ```
 
-## Tool Reference
+## Router Script Reference
 
-### movie-personality
+### router.sh
 
-Loads a character personality and runs their themed workflow.
+A bash script that loads a character personality and runs their themed workflow.
+
+**Location:** `.opencode/skill/smart-router-skill/router.sh`
 
 ```bash
 # Basic usage
-movie-personality --character yoda
-movie-personality --character stark
-movie-personality --character sherlock
+bash router.sh --character yoda
+bash router.sh --character stark
+bash router.sh --character sherlock
+
+# Override mission from config
+bash router.sh --character yoda --mission 2
 
 # Help
-movie-personality --help
+bash router.sh --help
 ```
 
 **How it works:**
-1. Reads `personality-config.json` for the character
-2. Gets the mission number (1 or 2)
-3. Runs the character's script with that mission
-4. Displays themed output
-5. Returns mission results for agent context
+1. Parses command-line arguments (character, mission)
+2. Reads `personality-config.json` for the character
+3. Gets the mission number (from args or config)
+4. Validates character and mission
+5. Executes the character's workflow script with mission parameter
+6. Displays themed output with full visibility
 
 ## Example Outputs
 
