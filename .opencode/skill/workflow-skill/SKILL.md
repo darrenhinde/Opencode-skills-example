@@ -21,8 +21,6 @@ bash script3.sh
 bash script4.sh
 ```
 
-Then use the custom `print-tool` to generate a final summary.
-
 This demonstrates:
 - ✅ How skills orchestrate multiple scripts
 - ✅ Sequential execution with console output
