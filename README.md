@@ -1,6 +1,11 @@
 # 🎯 OpenCode Skills Showcase
 
 A complete demonstration of **OpenCode Skills** with four progressive tiers, from simple instructions to interactive movie character personalities!
+## 🎬 Video Demo
+
+[![OpenCode Skills Showcase](https://img.youtube.com/vi/M0P_wzJPxMU/maxresdefault.jpg)](https://youtu.be/M0P_wzJPxMU)
+
+Watch the full demonstration of all four skill tiers in action!
 
 ## 📚 What's Included
 
